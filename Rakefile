@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Bg::Application.load_tasks
+Blitzgift::Application.load_tasks

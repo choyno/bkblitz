@@ -15,9 +15,9 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: bg_development
+  database: blitzgift_development
   pool: 5
-  username: bg
+  username: blitzgift
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -41,15 +41,15 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: bg_test
+  database: blitzgift_test
   pool: 5
-  username: bg
+  username: blitzgift
   password:
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: bg_production
+  database: blitzgift_production
   pool: 5
-  username: bg
+  username: blitzgift
   password:
