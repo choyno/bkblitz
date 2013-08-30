@@ -38,5 +38,11 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '>= 2.12.0'
+  gem 'factory_girl_rails'  
+end
+
+group :test do
+  gem 'faker'
+  gem 'capybara', '>= 2.0.0'
 end
