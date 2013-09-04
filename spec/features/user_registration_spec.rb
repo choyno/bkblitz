@@ -12,7 +12,7 @@ feature 'User registration' do
     click_button 'Log In'
   end
   
-  scenario 'initially not logged in' do
+  scenario 'default is not logged in' do
     visit root_url
     
     page.should have_link('register')
@@ -24,13 +24,13 @@ feature 'User registration' do
   scenario 'login attempt with blank email' do
     log_in_with('', 'password')
     
-    page.errors.on(:email).should == 'is required'
+    page.errors.on(:email).should eql 'is required'
   end
   
   scenario 'login attempt with blank password' do
     log_in_with('test1@example.com', '')
     
-    page.errors.on(:password).should == 'is required'
+    page.errors.on(:password).should eql 'is required'
   end
   
   scenario 'login attempt with invalid email/password combination' do
@@ -45,7 +45,7 @@ feature 'User registration' do
     fill_in :email, :with => ''
     click_button 'Register'
     
-    page.errors.on(:email).should == 'is required'
+    page.errors.on(:email).should eql 'is required'
   end
   
   scenario 'register new user with pre-existing email' do
@@ -63,7 +63,7 @@ feature 'User registration' do
     fill_in :name, :with => ''
     click_button 'Register'
     
-    page.errors.on(:name).should == 'is required'
+    page.errors.on(:name).should eql 'is required'
   end
   
   scenario 'register new user with blank password' do
@@ -72,7 +72,7 @@ feature 'User registration' do
     fill_in :password, :with => ''
     click_button 'Register'
     
-    page.errors.on(:password).should == 'is required'
+    page.errors.on(:password).should eql 'is required'
   end
   
   scenario 'register new user with mismatching confirmpassword' do
@@ -117,7 +117,7 @@ feature 'User registration' do
     
     visit '/logout'
     
-    current_path.should == '/login'
+    current_path.should eql '/login'
     page.should have_link('register')
     page.should have_link('login')
     page.should have_no_link('myaccount')
