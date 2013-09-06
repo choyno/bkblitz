@@ -1,4 +1,12 @@
 Blitzgift::Application.routes.draw do
+  root to: 'users#show'
+
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register', registration: 'users' } do
+    get '/register', controller: 'devise/registrations', action: :new, as: :new_user_registration
+  end
+
+  get '/myaccount', controller: :users, action: :show
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
