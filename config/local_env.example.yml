@@ -1,0 +1,12 @@
+# Add account settings and API keys here.
+# This file should be listed in .gitignore to keep your settings secret!
+# Each entry gets set as a local environment variable.
+# This file overrides ENV variables in the Unix shell.
+# For example, setting:
+# MAIL_USERNAME: 'Your_Mail_Username'
+# makes 'Your_Mail_Username' available as ENV["MAIL_USERNAME"]
+
+MAIL_ADDRESS: 'smtp.example.com'
+MAIL_PORT: 23
+MAIL_USERNAME: 'Your_Mail_Username'
+MAIL_PASSWORD: 'Yorm_Mail_Password'

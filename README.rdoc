@@ -15,6 +15,12 @@ The project was originally created using Ruby 1.9.3 and Rails 3.2.12.
 
 	# CREATE USER blitzgift WITH CREATEDB;
 	
-4.  Run `bundle` to install the configured gems
+4.  Set up a /config/local_env.yml file to configure development mail delivery.
+	local_env.example.yml shows the format.
+	If you need to use custom mail settings other than the values used in /config/environments/development.rb,
+	refactor the settings into environment variables to be set in local_env.
+
+5.  Run `bundle` to install the configured gems
+
  
 Thanks for your help!  We hope you enjoy working on this project.
