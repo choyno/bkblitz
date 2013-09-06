@@ -13,21 +13,21 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :id => :name %>
   </div>
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :id => :email %>
   </div>
   <div class="field">
     <%= f.label :subject %><br>
-    <%= f.text_field :subject %>
+    <%= f.text_field :subject, :id => :subject %>
   </div>
   <div class="field">
     <%= f.label :body %><br>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, :id => :body %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Send' %>
   </div>
 <% end %>
