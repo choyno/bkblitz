@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(params[:contact])
 
-    if @contact.valid?
+    if @contact.save
       Notifier.new_contact(@contact).deliver
       redirect_to(root_path, :notice => "Email was successfully sent.")
     else
