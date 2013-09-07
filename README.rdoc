@@ -3,6 +3,7 @@
 BlitzGift is the ultimate gifting concierge service.  We are grateful to have
 you as a contributing developer on this project.
 
+The project was originally created using Ruby 1.9.3 and Rails 3.2.12.
 
 == Getting Started
 
