@@ -1,4 +1,16 @@
 Blitzgift::Application.routes.draw do
+
+  #routes to be accessed by admin only
+  namespace :admin do
+    resources :suppliers, except: [:destroy]
+    resources :products, except: [:destroy]
+  end
+
+  #routes which can be accessed by anybody
+  scope module: 'admin' do
+    resources :products, only: [:index, :show]
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

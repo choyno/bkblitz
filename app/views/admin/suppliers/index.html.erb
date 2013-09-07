@@ -1,0 +1,26 @@
+<h1>Listing suppliers</h1>
+
+<table id="suppliers">
+  <tr>
+    <th>Name</th>
+    <th>Contact info</th>
+    <th>Active</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @suppliers.each do |supplier| %>
+  <tr>
+    <td><%= supplier.name %></td>
+    <td><%= supplier.contact_info %></td>
+    <td><%= supplier.active %></td>
+    <td><%= link_to 'show', [:admin, supplier] %></td>
+    <td><%= link_to 'edit', edit_admin_supplier_path(supplier) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'add', new_admin_supplier_path %>

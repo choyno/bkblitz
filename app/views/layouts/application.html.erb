@@ -8,6 +8,11 @@
 </head>
 <body>
 
+<% flash.each do |key, value| %>
+  <div class="<%= key == :notice ? "success" : "error" %>">
+    <%= value %>
+  </div>
+<% end %>
 <%= yield %>
 
 </body>

@@ -1,0 +1,37 @@
+<%= form_for([:admin, @product], html: {id: :product_form} ) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :supplier %><br />
+    <%= f.select :supplier_id, Supplier.all.collect{|s| [s.name, s.id]}, { prompt: "Select Supplier" }, { id: :product_supplier } %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_area :name %>
+  </div>
+  <div class="field">
+    <%= f.label :wholesale_price, "Wholesale Price" %><br />
+    <%= f.text_field :wholesale_price %>
+  </div>
+  <div class="field">
+    <%= f.label :retail_price, "Retail Price" %><br />
+    <%= f.text_field :retail_price %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Save" %>
+  </div>
+<% end %>

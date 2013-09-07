@@ -11,3 +11,6 @@
  *= require_self
  *= require_tree .
  */
+
+.success{ color:#008000;}
+.error{ color:#FF0000;}

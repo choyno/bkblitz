@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @product.name %>
+</p>
+
+<% if @product.supplier.present? %>
+  <p>
+    <b>Supplier Name:</b>
+    <%= @product.supplier.name %>
+  </p>
+<% end %>
+
+<p>
+  <b>Wholesale price:</b>
+  <%= @product.wholesale_price %>
+</p>
+
+<p>
+  <b>Retail price:</b>
+  <%= @product.retail_price %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @product.description %>
+</p>
+
+<% if @show_to_admin_only %>
+  <%= link_to 'edit', edit_admin_product_path(@product) %> |
+<% end %>
+<%= link_to 'back', products_path %>
