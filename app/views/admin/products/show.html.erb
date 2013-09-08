@@ -29,5 +29,7 @@
 
 <% if @show_to_admin_only %>
   <%= link_to 'edit', edit_admin_product_path(@product) %> |
+  <%= link_to 'back', [:admin, :products] %>
+<% else %>
+  <%= link_to 'back', :products %>
 <% end %>
-<%= link_to 'back', products_path %>
