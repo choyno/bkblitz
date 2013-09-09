@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="top-bar"><%= render partial: 'layouts/menu' %></div>
 
   <div class="flash"><%= flash[:notice] %></div>
   <%= yield %>
