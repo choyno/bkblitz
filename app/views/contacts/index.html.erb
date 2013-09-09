@@ -1,0 +1,8 @@
+<h1>Listing of contacts sent:</h1>
+<%= Contact.all.each do |contact| %>
+  <p> 
+  <b>name:</b> "<%= contact.name %>" < <%= contact.email %> > <br>
+  <b>subject:</b> <%= contact.subject %> <br>
+  <b>message:</b><br> <%= contact.body %> 
+  </p>
+<% end %>
