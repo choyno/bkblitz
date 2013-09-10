@@ -27,7 +27,6 @@ Blitzgift::Application.configure do
     user_name: ENV["MAIL_USERNAME"],
     password: ENV["MAIL_PASSWORD"]
   }
- config.action_mailer.default_options = {from: 'no-reply@blitzgift.com'}
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
