@@ -9,8 +9,13 @@
 <body>
 <div class="top-bar"><%= render partial: 'layouts/menu' %></div>
 
-  <div class="flash"><%= flash[:notice] %></div>
-  <%= yield %>
+<% flash.each do |key, value| %>
+  <div class="<%= key == :notice ? "success" : "error" %>">
+    <%= value %>
+  </div>
+<% end %>
+
+<%= yield %>
 
 </body>
 </html>

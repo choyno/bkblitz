@@ -1,0 +1,35 @@
+<h1>Listing products</h1>
+
+<table id="products">
+  <tr>
+    <th>Name</th>
+    <th>Supplier</th>
+    <th>Wholesale price</th>
+    <th>Retail price</th>
+    <th>Description</th>
+    <% if @show_to_admin_only %>
+      <th></th>
+      <th></th>
+    <% end %>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%= product.name %></td>
+    <td><%= product.supplier.present? ? product.supplier.name : " " %></td>
+    <td><%= product.wholesale_price %></td>
+    <td><%= product.retail_price %></td>
+    <td><%= product.description %></td>
+    <% if @show_to_admin_only %>
+      <td><%= link_to 'show', [:admin, product] %></td>
+      <td><%= link_to 'edit', edit_admin_product_path(product) %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<% if @show_to_admin_only %>
+  <%= link_to 'add', new_admin_product_path %>
+<% end %>
