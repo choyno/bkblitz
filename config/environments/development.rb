@@ -14,6 +14,8 @@ Blitzgift::Application.configure do
   config.action_controller.perform_caching = false
 
   # Expect mail delivery to work
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   
   config.action_mailer.smtp_settings = {
@@ -25,6 +27,7 @@ Blitzgift::Application.configure do
     user_name: ENV["MAIL_USERNAME"],
     password: ENV["MAIL_PASSWORD"]
   }
+ config.action_mailer.default_options = {from: 'no-reply@blitzgift.com'}
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log

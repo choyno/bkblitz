@@ -7,6 +7,6 @@
 # makes 'Your_Mail_Username' available as ENV["MAIL_USERNAME"]
 
 MAIL_ADDRESS: 'smtp.example.com'
-MAIL_PORT: 23
+MAIL_PORT: '23'
 MAIL_USERNAME: 'Your_Mail_Username'
 MAIL_PASSWORD: 'Yorm_Mail_Password'
