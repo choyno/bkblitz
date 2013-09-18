@@ -4,7 +4,6 @@ class Admin::ProductsController < Admin::ApplicationController
   ###########
   skip_before_filter :authorize, only: [:index, :show]
   before_filter :authorize_admin_path_only, only: [:index, :show]
-
   ############
   ## Requires
   ############

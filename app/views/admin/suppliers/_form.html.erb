@@ -1,8 +1,8 @@
-<%= form_for([:admin, @supplier], html: {id: :supplier_form} ) do |f| %>
+
+<%=  simple_form_for([:admin, @supplier], :html => {:id => 'supplier_form' }) do |f| %>
   <% if @supplier.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@supplier.errors.count, "error") %> prohibited this supplier from being saved:</h2>
-
       <ul>
       <% @supplier.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -11,19 +11,36 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :contact_info, "Contact Info" %><br />
-    <%= f.text_area :contact_info %>
-  </div>
-  <div class="field">
-    <%= f.label :active %><br />
-    <%= f.check_box :active %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Save" %>
-  </div>
+	<div class="form-horizontal"> 
+		<div class="inner-well">
+
+			<div class="control-group">
+				<label class="control-label" >*Name</label>
+				<div class="controls">
+					<%= f.input_field :name, placeholder:"Supplier name" %>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" >*Contact Info</label>
+				<div class="controls">
+          <%= f.input_field :contact_info, placeholder:'Contact Info', rows: '6', style: 'width: 80%;' %>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" >*Active</label>
+				<div class="controls">
+					<%= f.check_box :active %>
+				</div>
+			</div>
+
+			<div class="actions">
+				<%= f.submit "Save", class:"btn btn-primary" %>
+				<%= link_to 'back', admin_suppliers_path, class:"btn" %>
+			</div>
+
+		</div>
+	</div>
+
 <% end %>

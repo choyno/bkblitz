@@ -71,6 +71,12 @@ module Blitzgift
         ENV[key.to_s] = value
       end if File.exists?(env_file)
     end
+
+
+		config.to_prepare do
+			Devise::SessionsController.layout "login"
+			Devise::RegistrationsController.layout "login"
+		end
     
     config.generators do |g|
       g.test_framework :rspec,

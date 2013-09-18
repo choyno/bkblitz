@@ -5,8 +5,12 @@ Blitzgift::Application.routes.draw do
   match 'contactus' => 'contacts#new', :as => :contactus
 
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register', registration: 'users' } 
+	devise_for :users,:controllers => {:sessions => "sessions"}
+	
+
   devise_scope :user do
     get '/register', controller: 'devise/registrations', action: :new, as: :new_user_registration
+		get "/welcome", :to => "users#welcome" ,as: :welcome
   end
 
   get '/myaccount', controller: :users, action: :show

@@ -1,6 +1,14 @@
-<h1>Listing products</h1>
 
-<table id="products">
+<div class="span7" id="reset-left" >
+<h4 class="span3" id="reset-left" >Listing products</h4>
+<div class="pull-right">
+<% if @show_to_admin_only %>
+  <%= link_to '+ add new products', new_admin_product_path, class: "btn reset-top-button btn-primary btn-mini" %>
+<% end %>
+</div>
+
+</div>
+<table class="table table-striped table-condensed " id="products">
   <tr>
     <th>Name</th>
     <th>Supplier</th>
@@ -8,7 +16,7 @@
     <th>Retail price</th>
     <th>Description</th>
     <% if @show_to_admin_only %>
-      <th></th>
+      <th>Options</th>
       <th></th>
     <% end %>
   </tr>
@@ -21,15 +29,15 @@
     <td><%= product.retail_price %></td>
     <td><%= product.description %></td>
     <% if @show_to_admin_only %>
-      <td><%= link_to 'show', [:admin, product] %></td>
-      <td><%= link_to 'edit', edit_admin_product_path(product) %></td>
-    <% end %>
+			<td>
+				<%= link_to 'show', [:admin, product], class: "btn btn-primary btn-mini" %>
+				<%= link_to 'edit', edit_admin_product_path(product), class: "btn btn-mini" %>
+			</td>
+		<% end %>
   </tr>
 <% end %>
 </table>
 
+
 <br />
 
-<% if @show_to_admin_only %>
-  <%= link_to 'add', new_admin_product_path %>
-<% end %>
